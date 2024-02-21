@@ -133,7 +133,7 @@ class HBNBCommand(cmd.Cmd):
             key, value_str = tuple(arg.split('='))
             try:
                 if value_str.startswith('"') and value_str.endswith('"'):
-                    value = value_str[1:-1]
+                    value = value_str[1:-1].replace('_', ' ').replace('\\"', '"')
                 elif '.' in value_str:
                     value = float(value_str)
                 else:
